@@ -18,7 +18,7 @@ const startServer = async () => {
 
     server.listen(env.PORT, () => {
       logger.info(
-        `Server running on port ${env.PORT} in ${env.NODE_ENV} mode`
+        `Server running on port ${'http://localhost:',env.PORT} in ${env.NODE_ENV} mode`
       );
     });
 

@@ -13,7 +13,8 @@ const healthRoutes = require("./modules/health/health.routes");
 const notFoundHandler = require("./middlewares/notFound.middleware");
 const errorHandler = require("./middlewares/error.middleware");
 
-const authRoutes = require("./modules/auth/auth.routes");
+const employerRoutes = require("./modules/employer/employer.routes");
+const employeeRoutes = require("./modules/employee/employee.routes");
 
 const app = express();
 
@@ -52,8 +53,8 @@ app.use(cookieParser());
 
 // API routes
 app.use(`${env.API_PREFIX}/health`, healthRoutes);
-
-app.use(`${env.API_PREFIX}/auth`, authRoutes);
+app.use("/api/employer", employerRoutes);
+app.use("/api/employee", employeeRoutes);
 
 // 404 handler - must be last
 app.use(notFoundHandler);
